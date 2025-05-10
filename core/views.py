@@ -44,7 +44,7 @@ def dashboard_stats(request):
     # Son 30 günlük görev ve harcama sayısı
     thirty_days_ago = timezone.now() - timedelta(days=30)
     monthly_tasks = Gorev.objects.filter(created_at__gte=thirty_days_ago).count()
-    monthly_expenses = Harcama.objects.filter(created_at__gte=thirty_days_ago).aggregate(total=Sum('miktar'))['total'] or 0
+    monthly_expenses = Harcama.objects.filter(created_at__gte=thirty_days_ago).aggregate(total=Sum('tutar'))['total'] or 0
     
     return Response({
         'total_vehicles': total_vehicles,
