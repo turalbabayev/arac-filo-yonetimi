@@ -12,9 +12,16 @@ class SurucuSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class GorevSerializer(serializers.ModelSerializer):
+    arac_plaka = serializers.CharField(source='arac.plaka', read_only=True)
+    surucu_adi = serializers.SerializerMethodField()
+
+    def get_surucu_adi(self, obj):
+        return f"{obj.surucu.ad} {obj.surucu.soyad}"
+
     class Meta:
         model = Gorev
-        fields = '__all__'
+        fields = ['id', 'baslik', 'arac', 'surucu', 'baslangic_tarihi', 'bitis_tarihi', 
+                 'aciklama', 'durum', 'created_at', 'arac_plaka', 'surucu_adi']
 
 class KilometreKaydiSerializer(serializers.ModelSerializer):
     class Meta:

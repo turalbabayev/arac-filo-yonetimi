@@ -41,15 +41,23 @@ class Surucu(models.Model):
         verbose_name_plural = 'Sürücüler'
 
 class Gorev(models.Model):
+    DURUM_CHOICES = [
+        ('beklemede', 'Beklemede'),
+        ('devam_ediyor', 'Devam Ediyor'),
+        ('tamamlandi', 'Tamamlandı'),
+        ('iptal_edildi', 'İptal Edildi'),
+    ]
+    baslik = models.CharField(max_length=200, default="Görev")
     arac = models.ForeignKey(Arac, on_delete=models.CASCADE)
     surucu = models.ForeignKey(Surucu, on_delete=models.CASCADE)
     baslangic_tarihi = models.DateField()
     bitis_tarihi = models.DateField(null=True, blank=True)
     aciklama = models.TextField(default="")
+    durum = models.CharField(max_length=20, choices=DURUM_CHOICES, default='beklemede')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.arac.plaka} - {self.surucu.ad} {self.surucu.soyad}"
+        return f"{self.baslik} - {self.arac.plaka} - {self.surucu.ad} {self.surucu.soyad}"
 
     class Meta:
         verbose_name = 'Görev'
