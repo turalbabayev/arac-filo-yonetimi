@@ -51,7 +51,7 @@ def dashboard_stats(request):
         # Son 30 günlük toplam harcama
         monthly_expenses = Harcama.objects.filter(
             tarih__gte=thirty_days_ago
-        ).aggregate(total=Sum('miktar'))['total'] or 0
+        ).aggregate(total=Sum('tutar'))['total'] or 0
         
         return Response({
             'total_vehicles': total_vehicles,
@@ -83,7 +83,7 @@ def recent_activities(request):
         for expense in recent_expenses:
             activities.append({
                 'type': 'expense',
-                'description': f"{expense.arac.plaka} aracı için {expense.miktar} TL {expense.tur} harcaması yapıldı",
+                'description': f"{expense.arac.plaka} aracı için {expense.tutar} TL {expense.tip} harcaması yapıldı",
                 'date': expense.created_at
             })
         
