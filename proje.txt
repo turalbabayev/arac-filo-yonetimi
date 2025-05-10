@@ -1,0 +1,27 @@
+Konu 2. Motorlu Araç Filo Yönetim Sistemi
+Şirketlere yönelik araç filosu kiralama firması olan Araç Sizde Yükü Bizde A.Ş., etkinliklerini izlemek için bir
+bilgi sistemine gereksinim duymaktadır. Bilgi sisteminin taşıması gereken özellikler aşağıda belirtilmiştir.
+İşlemlerin değinilmemiş kural ve ayrıntıları, proje grubuna bırakılmıştır. Bu yöndeki varsayımlarınızı mutlaka
+açıkça belirtiniz. Bu varsayımların gerçeklenmesine yönelik özelliklerin dışında büyük ölçekli yeni bir özellik
+eklemeyiniz.
+Firmalar şirket araçlarını satın almak yerine kiralama modeline gitmeyi tercih edebilir. Bu durumda kiralama
+işlemleri ve tüm destek süreçleri de dış kaynak firmalarından alınır. Hazırlanacak bu programın hedefi, filo
+hizmeti sağlayan firmaların şirketlere ait araçları ile ilgili servis (parça değişimi: Kasko ile veya ücretli), lastik
+değişimi, bakım (periyodik), yakıt harcamaları olmak üzere filo araçları ile ilgili tüm detaylı bilgileri
+barındırması ve raporlamasıdır. Veri girişlerini dış kaynak firması yapar, raporlama ise hem firma yetkilileri
+hem de dış kaynak firması yetkililerince yapılabilir. Ayrıca araçların şirketin kendi özmalı olması durumunda
+da yine sistem kullanılabilecek ve raporlama yapılabilecektir. Firmada hem kiralanmış hem özmal olan araçlar
+bulunabilecektir.
+Her aybaşında her aracın kilometre sayacının güncel verisi sisteme kayıt edilir ve bir önceki ayın değeri de
+saklanır. Bazı araçlar bir havuzda durup bir görev atanmasının ardından bir de sürücü atanarak kullanılabilir.
+Bazı araçlar da belli bir süreliğine belli bir çalışana atanmaktadır. Bu ikinci durumda hangi çalışanın hangi
+araçla kaç kilometre gittiği de saklanmalıdır. Bu bilgiyi aracı kullanan girer ve dış kaynak firması da doğrular.
+Kiralanan araçlar için yapılan tüm harcamalar bakım, kasko, yakıt, tamir ve genel toplam düzeylerinde tablo
+ve grafiklerle raporlanabilmelidir. Geçmiş yılların değerlerine bakarak sistem gelecek yıl için yapılacak
+harcamanın ne kadar olabileceğini tahmin edebilmelidir. Bu amaçla basit bir yöntem olan Hareketli Ortalama
+Yöntemi kullanılabilir.
+Hareketli Ortalama Yöntemi, uzak geçmişten çok, yakın geçmişe ağırlık verir ve buna dayanarak, yalnızca bir
+dönem satış tahminini yapar. Örneğin; geçmiş tarihi dönem verilerinin üçü, dördü veya beşi alınarak, en son
+gerçekleşen dönem bunlara ilave edilir. Daha sonra, bu verilerin ortalaması, bir sonraki dönem satış miktarı
+olarak kabul edilir. Matematiksel olarak ifadesi aşağıdaki gibidir:
+

@@ -1,0 +1,1 @@
+web: gunicorn filo_yonetim_sistemi.wsgi 
