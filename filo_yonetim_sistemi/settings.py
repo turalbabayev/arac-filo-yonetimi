@@ -145,9 +145,12 @@ SIMPLE_JWT = {
 }
 
 # CORS ayarları
-CORS_ALLOW_ALL_ORIGINS = True  # Geliştirme için. Prodüksiyonda spesifik originler belirtilmeli
+CORS_ALLOW_ALL_ORIGINS = False  # Spesifik originlere izin ver
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://filo-frontend.vercel.app",
     "https://filo-frontend-5tny.vercel.app",
+    "https://filo-frontend-git-main-turalbabayev.vercel.app",
+    "https://filo-frontend-5tny.vercel.app"
 ]
